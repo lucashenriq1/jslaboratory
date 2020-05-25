@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body>
-  
+      <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="index.html">
               
@@ -61,91 +61,106 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
             </div>
-          </nav>
+        </nav>
         <h2>Sumary</h2>
+      <!-- navbar -->
         <ul>
-            <li><a href="tictactoe.html"> Tic Tac Toe </a></li>
+            <li><a href="tictactoe/tictactoe.html"> Tic Tac Toe </a></li>
             <li>nothing</li>
             <li>nothing</li>
         </ul>
         
-        <h3 id= 'one' > Pet me! </h3>
-        <h3 id= 'two' > teste2</h3>
-        <h13 id= 'three' > teste3</h3>
+           <div class="container-fluid" >
+              <div class="row clearfix">
+                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
+                  <div class="card">
+                      <div class= 'p-3 mb-1 bg-warning text-dark '>
+                        <h4 id= 'one' > Pet me! </h4> 
+                      </div>
+                    
+                      <h3 id= 'two' > teste2</h3>
+                      <h3 id= 'three' > teste3</h3>
+                  </div>
+                <!-- </div> -->
+              </div>
+          </div>
+
         
-        
-        
-    
+    <!-- comentario -->
     <!-- Js -->
-    <script>
-        console.log("connected!")
-        document.getElementById("one").addEventListener('mouseover',function(){
-            document.getElementById("one").textContent = "uaaaa";
-            document.getElementById("one").style.color= getRandomColor()
-
-        })
-        
-        
-        document.getElementById("one").addEventListener('mouseout',function(){
-            document.getElementById("one").textContent = "pls more";
-            document.getElementById("one").style.color= getRandomColor()
-            
-    
-
-
-        })
-        function getRandomColor() {
-                var letters = '0123456789ABCDEF';
-                var color = '#';
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-                console.log(color)
+      <script>
+        var estado =0;
+          document.getElementById("one").addEventListener('mouseover',function(){
+              document.getElementById("one").textContent = "uaaaa";
+              document.getElementById("one").style.color= getRandomColor()
+              estado = 0;
+          })
+          
+          
+          document.getElementById("one").addEventListener('mouseout',function(){
+              document.getElementById("one").textContent = "pls more";
+              document.getElementById("one").style.color= getRandomColor()
+              setTimeout(reset, 3000);
+              estado = 1;
+          })
+          function reset(){
+            if (teste == 1){
+            document.getElementById("one").textContent = "Pet Me";
             }
-                return color;
-                }
+          }
+          function getRandomColor() {
+                  var letters = '0123456789ABCDEF';
+                  var color = '#';
+              for (var i = 0; i < 6; i++) {
+                  color += letters[Math.floor(Math.random() * 16)];
+                  
+              }
+                  return color;
+          }
 
-        function randomColor() {      
-            
-            console.log(document.getElementById("one").style.color + "esse aq")
-        }
-        //     document.querySelector('#one').addEventListener('mouseover',function(){
-        //         document.querySelector('#one').textContent = "Mouse here";
-        //         function getRandomColor() {
-        //                 var letters = '0123456789ABCDEF';
-        //                 var color = '#';
-        //             for (var i = 0; i < 6; i++) {
-        //                 color += letters[Math.floor(Math.random() * 16)];
-        //             }
-        //             return color;
-        //             }
+          function randomColor() {        
+              console.log(document.getElementById("one").style.color + "esse aq")
+          }
+          
+          
+          //     document.querySelector('#one').addEventListener('mouseover',function(){
+          //         document.querySelector('#one').textContent = "Mouse here";
+          //         function getRandomColor() {
+          //                 var letters = '0123456789ABCDEF';
+          //                 var color = '#';
+          //             for (var i = 0; i < 6; i++) {
+          //                 color += letters[Math.floor(Math.random() * 16)];
+          //             }
+          //             return color;
+          //             }
 
-        //         function randomcolor() {
-                    
-        //             document.querySelector('#one').style.color= getRandomColor()
-        //         }
-        //     })
-        //     document.querySelector('#one').addEventListener('mouseover',function(){
-        //         document.querySelector('#one').textContent = "Mouse here";
-        //         function getRandomColor() {
-        //                 var letters = '0123456789ABCDEF';
-        //                 var color = '#';
-        //             for (var i = 0; i < 6; i++) {
-        //                 color += letters[Math.floor(Math.random() * 16)];
-        //             }
-        //             return color;
-        //             }
+          //         function randomcolor() {
+                      
+          //             document.querySelector('#one').style.color= getRandomColor()
+          //         }
+          //     })
+          //     document.querySelector('#one').addEventListener('mouseover',function(){
+          //         document.querySelector('#one').textContent = "Mouse here";
+          //         function getRandomColor() {
+          //                 var letters = '0123456789ABCDEF';
+          //                 var color = '#';
+          //             for (var i = 0; i < 6; i++) {
+          //                 color += letters[Math.floor(Math.random() * 16)];
+          //             }
+          //             return color;
+          //             }
 
-        //         function randomcolor() {
-                    
-        //             document.querySelector('#one').style.color= getRandomColor()
-        //         }
-                
-        // document.querySelector('#two')
-        // document.querySelector('#three')
+          //         function randomcolor() {
+                      
+          //             document.querySelector('#one').style.color= getRandomColor()
+          //         }
+                  
+          // document.querySelector('#two')
+          // document.querySelector('#three')
 
-        
-    </script>
-    
+          
+      </script>
+      
     
     </body>
 
