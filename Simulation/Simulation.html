@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <meta charset= "utf-8"> -->
+    <title>teste</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .panel-title{
+            color: #a94442;
+            font-weight: bold;
+            font-size: large;
+        }
+        
+        .panel-heading{
+            background-color: rgb(118, 230, 238);
+        }
+        .panel-answer{
+            background-color: rgb(118, 230, 238);
+        }
+        .panel-body{
+            color: #a94442;
+            background-color: #f2dede;
+        }
+    </style>
+
+    </head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+
+
+
+
+    <div class= "container">
+      <!-- panel -->
+        <div class="panel panel-col-pink">
+            <div class="panel-heading" role="tab" id="headingOne_1">
+                <p class="panel-title">
+                    
+                        
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Simulation using Newton-Raphson method
+                    
+                </p>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                 
+                    <div class="row clearfix"></div>
+                        <div class="col-md-4">
+                            <img src="diodo.gif" class="img-responsive thumbnail" style="
+                                margin-left: auto;
+                                margin-right: auto;
+                                display: block;" alt="Trulli" >
+                            <div class="">
+                                <label for="Vt"> Vt </label>
+                                <input type="number" class="form-control" step=".01" id="Vt" value="0.0256927355" readonly> 
+                            </div >
+                        </div>
+                        
+                        <div class="col-md-8 align-center ">
+                    
+                                    <label for="temp">  Simulation Temp. (°C):  </label>
+                                    <input type="number" class="form-control" step="" id="temp" value="25" >
+
+                                    <label for="R1"> R1 (Ohm): </label>
+                                    <input type="number" class="form-control" step=".01" id="R1" value="50">
+                                    
+                                    <label for="Vin"> Vss (V): </label>
+                                    <input type="number" class="form-control" step=".01" id="Vin" value="0.7840684">
+                            
+                                    <label for="eta"> η: </label>
+                                    <input type="number" class="form-control" step=".01" id="eta" value="1">
+                            
+                            
+                            
+                            <div class="form-row">
+                                <div class="form-group col-md-5"> 
+                                    <label for="Is">  Is(A): </label>
+                                    <input type="number" class="form-control" step=".01" id="Is" value="1.091062">
+                                </div>
+                                <div class="form-group col-md-2"> 
+                                    <label for="z"> &nbsp; </label>
+                                    <input type="character" class="form-control" step=".01" id="z" value="x 10 ^" readonly> 
+                                </div>
+                                <div class="form-group col-md-5"> 
+                                    <label for="pot">  &nbsp; </label>
+                                    <input type="number" class="form-control" step=".01" id="pot" value="-16">
+                                </div>
+                                
+                            </div>
+                                
+                            <div class="form-row">
+                                <div class="form-group col-md-6"> 
+                                    <button onclick="validateForm()" class= "btn btn-primary btn-lg" >Run</button>
+                                </div>
+                                
+                                <div class="form-group col-md-6"> 
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6"> 
+                                        
+                                            <label for="pet-select">Choose tab size:</label>
+
+                                            <select name="pets" id="pet-select" readonly>
+                                                
+                                                <option value="">-- ALL --</option>
+                                                <option value="dog">Last 20</option>
+                                                <option value="cat">Last 30</option>
+                                                <option value="hamster">Last 50</option>
+                                                <option value="parrot">Last 100</option>
+                                                
+                                            </select>
+                                            
+                                        </div>
+                                        <div class="form-group col-md-6"> 
+                                        
+                                            <button onclick="cleartab()" class= "btn btn-primary btn-lg" >Clear Tab</button>
+                                            
+                                        </div>
+                                        
+                                    
+                                    
+                                    </div>    
+                                </div>
+                            </div>        
+                            
+                            
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+        
+            <div class="panel-answer" role="tab" id="">               
+                    
+                <div class="form-row">   
+                    <div class="col-md-12">
+                        <div class="col-md-4">
+                            <h4> Diod Voltage  =  <p id= "Vdr"> </p>   </h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h4> Diod current = <p id= "Ic">  </p>  </h4>  
+                        </div>
+                        <div class="col-md-4">
+                            <h4> Iterations = <p id= "contador">  </p>  </h4>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+        
+            <div id="tab" class="panel-collapse collapse in"  style="background-color: rgb(255,255,255);" role="tabpanel" aria-labelledby="retorno_aquisicao_collapse_mes">
+                <div class="panel-body">
+                    <div class="table-responsive" style="height: 100%; width: 100%">
+                        <table class="table table-bordered table-striped table-hover dataTable js-exportable align-center">
+                            <thead>
+                                <tr>
+                                    <th>Iteration</th>
+                                    <th>Diode Voltage (V) </th>
+                                    <th>Diode Current (A)</th>
+                                    
+                                </tr>
+                            </thead>
+                            
+                            <tfoot>
+                            </tfoot>
+                            
+                            <tbody id="tabela"> 
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+        
+        
+        
+        </div>
+        <!-- panel -->
+        
+        
+     
+     
+    
+    </div>
+
+
+
+    <script>
+        
+        //var Vin = 0.7840684;
+        //var Is =  1.091062*Math.pow(10,-16);
+        // var Vt = 0.0256927355;
+        Vt = ((25  + 273.15) * (1.380649*Math.pow(10,-23)))/ (1.602*Math.pow(10,-19)) 
+        // var eta = 1;
+        var Vr = []    
+        
+        // $(document).ready(function(){
+        //     $("Vd").change(function(){
+        //         Newton(Vd);
+                
+        //     });
+        // });
+        $(document).ready(function(){
+            $("#temp").change(function(){
+                var T = parseInt(document.getElementById("temp").value);
+                var  Vt = ((T  + 273.15) * (1.380649*Math.pow(10,-23)))/ (1.602176634*Math.pow(10,-19)) 
+                
+                document.getElementById("Vt").value = Vt
+            });
+        });
+        
+        
+        
+        function validateForm() {
+            var Vd = 0.75;
+            var R1 = document.getElementById("R1").value;
+            var Vin = document.getElementById("Vin").value;
+            var eta = document.getElementById("eta").value;
+            
+            var It = document.getElementById("Is").value;
+            var pot = document.getElementById("pot").value;
+            
+            var Temp = parseInt(document.getElementById("temp").value);
+            
+            console.log(Temp)
+            
+            var Vt = (( Temp  + 273.15) * (1.380649*Math.pow(10,-23)))/ (1.602176634*Math.pow(10,-19)) 
+            
+            console.log(Vt)
+
+            
+            var Is =  It*Math.pow(10,pot);
+            
+            Vr = [];
+            
+            Ir = [];
+            
+            Newton(Vd,R1,Vin,eta,Is,Vt);
+        }
+        
+
+
+
+        function Id(Vd,R1,Vin,eta,Is,Vt){
+            
+            var K = (Is*Math.exp(Vd/(eta*Vt)))/Is
+            var Idi = (Vin) - (R1*Is*Math.exp(Vd/(eta*Vt))) - eta*Vt*Math.log(K)
+
+            
+            
+            
+            return Idi;
+        } 
+        function Id2(Vd,R1,Vin,eta,Is,Vt){
+            
+            var Idi2 = - (R1*Is*Math.exp(Vd/(eta*Vt)))/(eta * Vt);
+
+            
+
+            
+            return Idi2;
+        } 
+
+        function Newton(Vd,R1,Vin,eta,Is,Vt){
+
+            for(var i = 0; i <= 500; i++){
+                var fxn = 0;
+                var Dfxn = 0;
+                var contador
+                
+                if(i == 500){
+                    alert("Limite de iterações")
+                }
+                
+                if(i == 0){
+                    console.log("iteraçao" + i)
+                    
+                    fxn =  Id(Vd,R1,Vin,eta,Is,Vt); 
+                    Dfxn = Id2(Vd,R1,Vin,eta,Is,Vt);
+                    Vd = Vd - fxn/Dfxn;
+                    Vr[i] = Vd;
+                    Ir[i] = Is*(Math.exp(Vd/(Vt*eta)));
+                    
+                    console.log(Vr);
+                    
+                }else if(i == 1){
+                    
+                    // fxn =  Id(Vr[i-1]); 
+                    // Dfxn = Id2(Vr[i-1]);
+                    //console.log("iteraçao" + i)
+                    
+                    fxn =  Id(Vd,R1,Vin,eta,Is,Vt); 
+                    Dfxn = Id2(Vd,R1,Vin,eta,Is,Vt);
+
+                    Vd = Vd - fxn/Dfxn;
+                    Vr[i] = Vd;
+                    Ir[i] = Is*(Math.exp(Vd/(Vt*eta)));
+                    
+                    console.log(Vr);
+                    
+                } else{
+                    //console.log("iteraçao" + i)
+                    
+                    fxn =  Id(Vd,R1,Vin,eta,Is,Vt); 
+                    Dfxn = Id2(Vd,R1,Vin,eta,Is,Vt);
+
+                    Vd = Vd - fxn/Dfxn;
+                    
+                    Ir[i] = Is*(Math.exp(Vd/(Vt*eta)));
+                    Vr[i] = Vd;
+                    if(isNaN(Vr[i])){
+                        alert("O critério de Newthon Rhapson divergiu para este setup")
+                        break
+                    }
+                    var erro1 = Vr[ (i) ]
+                    var erro2 = Vr[ (i - 1) ]
+
+                    var erro = erro2 - erro1;
+                    
+                    erro = Math.abs(erro);
+                    
+                    
+                    contador = i;
+                    
+                    if( erro <= 0.000001 ){
+                        break;
+                    }
+                }      
+            
+            }
+            
+            var Ic = Is*(Math.exp(Vd/(Vt*eta)))
+            document.getElementById("Vdr").innerHTML = Vr[(Vr.length - 1)] + " V";
+            document.getElementById("Ic").innerHTML = Ic + " A";
+            document.getElementById("contador").innerHTML = (Vr.length - 1);
+            
+            tab(Vr,Ir);
+            
+            
+            
+        }
+
+        function tab ( Vr, Ir ){
+               
+
+              for(var i = 0; i <= Vr.length -1 ; i++) {
+                $('#tabela').append(`
+                    <tr>
+                        <td>${i}</td>
+                        <td>${Vr[i]}</td>
+                        <td class="fluxo_caixa"> ${Ir[i]} </td>
+                        
+                    </tr>
+                
+                `); 
+
+            }
+        
+            var tamanho_tabela = document.getElementById("tabela").childElementCount;
+            console.log("tamanho tabela = " + tamanho_tabela)
+            tabela_retorno_aquisição  = document.getElementById("tabela")
+            var diferença = tamanho_tabela - (Vr.length )
+            console.log("deferença = " + diferença)
+            if( diferença > 0 ){
+                    
+                    for(i=0; i < diferença; i++ ){
+                        
+                        tabela.removeChild(tabela.children[0]);
+                    
+                    }
+            }
+        
+        }
+        
+        function cleartab (){
+            while(tabela.firstChild)  { 
+                tabela.removeChild(tabela.firstChild);
+            }
+
+        }
+        
+    </script>
+</body>
+</html>
