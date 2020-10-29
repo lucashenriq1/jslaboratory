@@ -2,7 +2,9 @@
 <html>
 <head>
     <!-- <meta charset= "utf-8"> -->
-    <title>teste</title>
+    <title>Newton-Raphson Method</title>
+    
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -182,143 +184,148 @@
             
             <p>&nbsp;</p>
             
-            <div class="panel-heading" role="tab" id="headingOne_1">
-                <p class="panel-title">
-                    
+            <div class="jumbotron"> 
+                <div class="panel-heading" role="tab" id="headingOne_1">
+                    <p class="panel-title">
                         
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Diod Simulation using Newton-Raphson Method
-                    
-                </p>
-            </div>
-            <div class="panel-body">
-                <div class="col-md-12">
-                 
-                    <div class="row clearfix"></div>
-                        <div class="col-md-4">
-                            <img src="diodo.gif" class="img-responsive thumbnail" style="
-                                margin-left: auto;
-                                margin-right: auto;
-                                display: block;" alt="Trulli" >
-                            <div class="">
-                                <label for="Vt"> Vt </label>
-                                <input type="number" class="form-control" step=".01" id="Vt" value="0.0256927355" readonly> 
-                            </div >
-                        </div>
+                            
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Diod Simulation using Newton-Raphson Method
                         
-                        <div class="col-md-8 align-center ">
+                    </p>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
                     
-                                    <label for="temp">  Simulation Temp. (°C):  </label>
-                                    <input type="number" class="form-control" step="" id="temp" value="25" >
+                        <div class="row clearfix">
+                            <div class="col-md-4">
+                                <img src="diodo.gif" class="img-responsive thumbnail" style="
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    display: block;" alt="Trulli" >
+                                <div class="">
+                                    <label for="Vt"> Vt </label>
+                                    <input type="number" class="form-control" step=".01" id="Vt" value="0.0256927355" readonly> 
+                                </div >
+                            </div>
+                            
+                            <div class="col-md-8 align-center ">
+                        
+                                        <label for="temp">  Simulation Temp. (°C):  </label>
+                                        <input type="number" class="form-control" step="" id="temp" value="25" >
 
-                                    <label for="R1"> R1 (Ohm): </label>
-                                    <input type="number" class="form-control" step=".01" id="R1" value="50">
+                                        <label for="R1"> R1 (Ohm): </label>
+                                        <input type="number" class="form-control" step=".01" id="R1" value="50">
+                                        
+                                        <label for="Vin"> Vss (V): </label>
+                                        <input type="number" class="form-control" step=".01" id="Vin" value="0.7840684">
+                                
+                                        <label for="eta"> η: </label>
+                                        <input type="number" class="form-control" step=".01" id="eta" value="1">
+                                
+                                
+                                
+                                <div class="form-row">
+                                    <div class="form-group col-md-5"> 
+                                        <label for="Is">  Is(A): </label>
+                                        <input type="number" class="form-control" step=".01" id="Is" value="1.091062">
+                                    </div>
+                                    <div class="form-group col-md-2"> 
+                                        <label for="z"> &nbsp; </label>
+                                        <input type="character" class="form-control" step=".01" id="z" value="x 10 ^" readonly> 
+                                    </div>
+                                    <div class="form-group col-md-5"> 
+                                        <label for="pot">  &nbsp; </label>
+                                        <input type="number" class="form-control" step=".01" id="pot" value="-16">
+                                    </div>
                                     
-                                    <label for="Vin"> Vss (V): </label>
-                                    <input type="number" class="form-control" step=".01" id="Vin" value="0.7840684">
-                            
-                                    <label for="eta"> η: </label>
-                                    <input type="number" class="form-control" step=".01" id="eta" value="1">
-                            
-                            
-                            
-                            <div class="form-row">
-                                <div class="form-group col-md-5"> 
-                                    <label for="Is">  Is(A): </label>
-                                    <input type="number" class="form-control" step=".01" id="Is" value="1.091062">
                                 </div>
-                                <div class="form-group col-md-2"> 
-                                    <label for="z"> &nbsp; </label>
-                                    <input type="character" class="form-control" step=".01" id="z" value="x 10 ^" readonly> 
-                                </div>
-                                <div class="form-group col-md-5"> 
-                                    <label for="pot">  &nbsp; </label>
-                                    <input type="number" class="form-control" step=".01" id="pot" value="-16">
-                                </div>
+                                    
+                                <div class="form-row">
+                                    <div class="form-group col-md-6"> 
+                                        <button onclick="validateForm()" class= "btn btn-primary btn-lg" >Run</button>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6"> 
+                                        <div class="form-row">
+                                            <!-- <div class="form-group col-md-6"> 
+                                            
+                                                <label for="pet-select">Choose tab size:</label>
+
+                                                <select name="pets" id="pet-select" readonly>
+                                                    
+                                                    <option value="">-- ALL --</option>
+                                                    <option value="dog">Last 20</option>
+                                                    <option value="cat">Last 30</option>
+                                                    <option value="hamster">Last 50</option>
+                                                    <option value="parrot">Last 100</option>
+                                                    
+                                                </select>
+                                                
+                                            </div> -->
+                                            <div class="form-group col-md-6"> 
+                                            
+                                                <button onclick="cleartab()" class= "btn btn-primary btn-lg" >Clear Tab</button>
+                                                
+                                            </div>
+                                            
+                                        
+                                        
+                                        </div>    
+                                    </div>
+                                </div>        
+                                
                                 
                             </div>
-                                
-                            <div class="form-row">
-                                <div class="form-group col-md-6"> 
-                                    <button onclick="validateForm()" class= "btn btn-primary btn-lg" >Run</button>
-                                </div>
-                                
-                                <div class="form-group col-md-6"> 
-                                    <div class="form-row">
-                                        <!-- <div class="form-group col-md-6"> 
-                                        
-                                            <label for="pet-select">Choose tab size:</label>
+                        </div>
+                    </div> 
+                </div> 
 
-                                            <select name="pets" id="pet-select" readonly>
-                                                
-                                                <option value="">-- ALL --</option>
-                                                <option value="dog">Last 20</option>
-                                                <option value="cat">Last 30</option>
-                                                <option value="hamster">Last 50</option>
-                                                <option value="parrot">Last 100</option>
-                                                
-                                            </select>
-                                            
-                                        </div> -->
-                                        <div class="form-group col-md-6"> 
-                                        
-                                            <button onclick="cleartab()" class= "btn btn-primary btn-lg" >Clear Tab</button>
-                                            
-                                        </div>
-                                        
-                                    
-                                    
-                                    </div>    
-                                </div>
-                            </div>        
-                            
-                            
+                <p>
+                    &nbsp;
+                </p>
+                
+                <div class="panel-answer" role="tab" id="">               
+                        
+                    <div class="form-row">   
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <h4> Diod Voltage  =  <p id= "Vdr"> </p>   </h4>
+                            </div>
+                            <div class="col-md-4">
+                                <h4> Diod current = <p id= "Ic">  </p>  </h4>  
+                            </div>
+                            <div class="col-md-4">
+                                <h4> Iterations = <p id= "contador">  </p>  </h4>
+                            </div>
                         </div>
                     </div>
                 </div> 
-            </div> 
-        
-            <div class="panel-answer" role="tab" id="">               
-                    
-                <div class="form-row">   
-                    <div class="col-md-12">
-                        <div class="col-md-4">
-                            <h4> Diod Voltage  =  <p id= "Vdr"> </p>   </h4>
-                        </div>
-                        <div class="col-md-4">
-                            <h4> Diod current = <p id= "Ic">  </p>  </h4>  
-                        </div>
-                        <div class="col-md-4">
-                            <h4> Iterations = <p id= "contador">  </p>  </h4>
-                        </div>
-                    </div>
-                </div>
-            </div> 
+               
             
-        
-            <div id="tab" class="panel-collapse collapse in"  style="background-color: rgb(255,255,255);" role="tabpanel" aria-labelledby="retorno_aquisicao_collapse_mes">
-                <div class="panel-body">
-                    <div class="table-responsive" style="height: 100%; width: 100%">
-                        <table class="table table-bordered table-striped table-hover dataTable js-exportable align-center">
-                            <thead>
-                                <tr>
-                                    <th>Iteration</th>
-                                    <th>Diode Voltage (V) </th>
-                                    <th>Diode Current (A)</th>
-                                    
-                                </tr>
-                            </thead>
-                            
-                            <tfoot>
-                            </tfoot>
-                            
-                            <tbody id="tabela"> 
+                
+                    <div class="panel-body">
+                        <div class="table-responsive" style="height: 100%; width: 100%">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable align-center">
+                                <thead>
+                                    <tr>
+                                        <th>Iteration</th>
+                                        <th>Diode Voltage (V) </th>
+                                        <th>Diode Current (A)</th>
+                                        
+                                    </tr>
+                                </thead>
                                 
-                            </tbody>
-                        </table>
+                                <tfoot>
+                                </tfoot>
+                                
+                                <tbody id="tabela"> 
+                                    
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-            </div>
-            
+                
+            </div> 
 
 
             <p>
@@ -327,125 +334,126 @@
             </p>
 
 
-            <div class="panel-heading" role="tab" id="headingOne_1">
-                <p class="panel-title">
-                    
+            <div class="jumbotron"> 
+                <div class="panel-heading" role="tab" id="headingOne_1">
+                    <p class="panel-title">
                         
-                    &nbsp;&nbsp;&nbsp; Generic Device Simulation using Newton-Raphson Method
-                    
-                </p>
-            </div>
-            
-            <div class="panel-body">
-                <div class="col-md-12">
-                 
-                    <div class="row clearfix">
-                        <div class="col-md-4 align-center ">
-                            <img src="device.png" class="img-responsive thumbnail" style="
-                            margin-left: auto;
-                            margin-right: auto;
-                            display: block;" alt="Trulli" >
-
-                        </div>
+                            
+                        &nbsp;&nbsp;&nbsp;  Device Simulation using Newton-Raphson Method
                         
-                        <div class="col-md-8 align-center ">
-                    
-                                    
-                                    <label for="R1"> R1 (Ohm): </label>
-                                    <input type="number" class="form-control" step=".01" id="R1_f" value="1000">
-                                    
-                                    <label for="Vin"> Vdc (V): </label>
-                                    <input type="number" class="form-control" step=".01" id="Vin_f" value="1">
-                            
-                                    
-                            
-                            
-                            
-                            
-                                
-                            <p>
-                                &nbsp
+                    </p>
+                </div>
                 
-                            </p>
-                            <div class="form-row">
-                                <div class="form-group col-md-6"> 
-                                    <button onclick="validateForm2()" class= "btn btn-primary btn-lg" >Run</button>
-                                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                    
+                        <div class="row clearfix">
+                            <div class="col-md-4 align-center ">
+                                <img src="device.png" class="img-responsive thumbnail" style="
+                                margin-left: auto;
+                                margin-right: auto;
+                                display: block;" alt="Trulli" >
+
+                            </div>
+                            
+                            <div class="col-md-8 align-center ">
+                        
+                                        
+                                        <label for="R1"> R1 (Ohm): </label>
+                                        <input type="number" class="form-control" step=".01" id="R1_f" value="1000">
+                                        
+                                        <label for="Vin"> Vdc (V): </label>
+                                        <input type="number" class="form-control" step=".01" id="Vin_f" value="1">
                                 
-                                <div class="form-group col-md-6"> 
-                                    <div class="form-row">
                                         
-                                        <div class="form-group col-md-6"> 
-                                        
-                                            <button onclick="cleartab2()" class= "btn btn-primary btn-lg" >Clear Tab</button>
+                                
+                                
+                                
+                                
+                                    
+                                <p>
+                                    &nbsp;
+                    
+                                </p>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6"> 
+                                        <button onclick="validateForm2()" class= "btn btn-primary btn-lg" >Run</button>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6"> 
+                                        <div class="form-row">
                                             
-                                        </div>
+                                            <div class="form-group col-md-6"> 
+                                            
+                                                <button onclick="cleartab2()" class= "btn btn-primary btn-lg" >Clear Tab</button>
+                                                
+                                            </div>
+                                            
                                         
-                                    
-                                    
-                                    </div>    
-                                </div>
-                            </div>        
-                            
-                            
+                                        
+                                        </div>    
+                                    </div>
+                                </div>        
+                                
+                                
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+
+                <p>
+                    &nbsp;
+
+                </p>
+                <div class="panel-answer" role="tab" id="">               
+                        
+                    <div class="form-row">   
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <h4> Device Voltage  =  <p id= "Vf"> </p>   </h4>
+                            </div>
+                            <div class="col-md-4">
+                                <h4> Device current = <p id= "If">  </p>  </h4>  
+                            </div>
+                            <div class="col-md-4">
+                                <h4> Iterations = <p id= "contador_f">  </p>  </h4>
+                            </div>
                         </div>
                     </div>
                 </div> 
-            </div> 
-        
-            <p>
-                &nbsp
-
-            </p>
-            <div class="panel-answer" role="tab" id="">               
-                    
-                <div class="form-row">   
+                
+                <div class="form-row">  
                     <div class="col-md-12">
-                        <div class="col-md-4">
-                            <h4> Device Voltage  =  <p id= "Vf"> </p>   </h4>
-                        </div>
-                        <div class="col-md-4">
-                            <h4> Device current = <p id= "If">  </p>  </h4>  
-                        </div>
-                        <div class="col-md-4">
-                            <h4> Iterations = <p id= "contador_f">  </p>  </h4>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            
-            <div class="form-row">  
-                <div class="col-md-12">
-                    <div class="panel-body">
-                        <div class="table-responsive" style="height: 100%; width: 100%">
-                            <table class="table table-bordered table-striped table-hover dataTable js-exportable align-center">
-                                <thead>
-                                    <tr>
-                                        <th>Iteration</th>
-                                        <th>Device Voltage (V) </th>
-                                        <th>Device Current (A)</th>
-                                        
-                                    </tr>
-                                </thead>
-                                
-                                <tfoot>
-                                </tfoot>
-                                
-                                <tbody id="tabela_2"> 
+                        <div class="panel-body">
+                            <div class="table-responsive" style="height: 100%; width: 100%">
+                                <table class="table table-bordered table-striped table-hover dataTable js-exportable align-center">
+                                    <thead>
+                                        <tr>
+                                            <th>Iteration</th>
+                                            <th>Device Voltage (V) </th>
+                                            <th>Device Current (A)</th>
+                                            
+                                        </tr>
+                                    </thead>
                                     
-                                </tbody>
-                            </table>
+                                    <tfoot>
+                                    </tfoot>
+                                    
+                                    <tbody id="tabela_2"> 
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        
             <p>
-                &nbsp
+                &nbsp;
 
             </p>
             <p>
-                &nbsp
+                &nbsp;
 
             </p>
         
