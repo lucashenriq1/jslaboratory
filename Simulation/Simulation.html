@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
     <style>
         .panel-title{
             color: #a94442;
@@ -23,41 +22,8 @@
             background-color: rgb(118, 230, 238);
         }
         .panel-body{
-            color: #000000;
+            color: #a94442;
             background-color: #f2dede;
-        }
-        
-        .kkk{
-            color: #050505;
-            background-color: rgb(236, 241, 241);
-        }
-        
-        .panel-text-heading{
-            background-color: rgb(216, 219, 219);
-        }
-        .panel-text-title{
-            color: #000000;
-            font-weight: bold;
-            font-size: large;
-        }
-        #myBtn {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 99;
-            font-size: 18px;
-            border: none;
-            outline: none;
-            background-color: rgb(101, 166, 226);
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 4px;
-            }
-
-        #myBtn:hover {
-            background-color: #555;
         }
     </style>
 
@@ -66,127 +32,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
 
 
     <div class= "container">
       <!-- panel -->
         <div class="panel panel-col-pink">
-            <div class="panel-text-heading" role="tab" id="headingOne_1">
-                <p class="panel-text-title">
-                    
-                        
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Newton-Raphson Method
-                    
-                </p>
-            </div>
-            
-            <div class="kkk">
-                <div class="col-md-12">
-                    <div class="col-md-4">
-                        <img src="newton-rhapson.jpeg" class="img-responsive thumbnail" style="
-                                margin-left: auto;
-                                margin-right: auto;
-                                display: block;" alt="Trulli" >
-                        <sup>  source: internet </sup>
-                       
-                    </div>
-                    
-                    <div class="col-md-8">
-                        <p> 
-                            In numerical analysis, 
-                            <b>Newton's method</b>, also known as the <b>Newton–Raphson method</b>, named after 
-                            Isaac Newton and Joseph Raphson
-                            , is a root-finding algorithm 
-                            which produces successively better approximations to the 
-                            roots (or zeroes) of a 
-                            real-valued function. 
-                            The most basic version starts with a single-variable function <span class="texhtml"><i>f</i></span> defined for a 
-                            real variable
-                            <span class="texhtml"><i>x</i></span>, the function's derivative
-                            <span class="texhtml"><i>f&thinsp;′</i></span>, and an initial guess <span class="texhtml"><i>x</i><sub>0</sub></span> for a 
-                            root of <span class="texhtml"><i>f</i></span>. <br>
-                            
-                            <sup>  source: <a href=" https://en.wikipedia.org/wiki/Newton%27s_method"> https://en.wikipedia.org/wiki/Newton%27s_method </a> </sup>
-
-                        </p> 
-                        <p>
-                            In this case the <b>Newton's method</b> is aplayed to calculate electrical quantities of non-linear electronic devices. The use of this method is 
-                            justified due it's accuracy as also the possibility of function divergence of a non-linear devices equations calculated by standart numerical analysis.
-
-                        </p>
-                    </div>
-                   
-                                
-                                                
-                   
-                </div> 
-            </div> 
-            
-            <p>&nbsp;</p>
-            
-            <div class="panel-text-heading" role="tab" id="headingOne_1">
-                <p class="panel-text-title">
-                    
-                        
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nod-linear Devices
-                    
-                </p>
-            </div>
-            
-            <div class="kkk">
-                <div class="col-md-12">
-                    <div class="col-md-4">
-                        <img src="diode.jpg" class="img-responsive thumbnail" style="
-                                margin-left: auto;
-                                margin-right: auto;
-                                display: block;" alt="Trulli" >
-                        <sup>  source: internet </sup>
-                        
-                        
-                        <p>&nbsp;</p>
-                        
-                        <img src="fic.png" class="img-responsive thumbnail" style="
-                        margin-left: auto;
-                        margin-right: auto;
-                        display: block;" alt="Trulli" >
-                         
-                         <sup>  source: autor collection </sup>
-                        
-                       
-                    
-                    
-                    </div>
-                    
-                    <div class="col-md-8">
-                        <p> 
-                            One of the study objects is the diode a bipolar electronic device that follows the equation:
-
-                            
-                            $$ { I_{d} =I_{s}(e^{V_{d}/ \eta V_{t} } - 1)} $$
-
-                        </p> 
-                        <p> 
-                            
-                            In olther hand is also studied a generic device that follows the equation:
-                            
-                            $$ { I_{d} =1.3V_{d}^{3} -0.2V_{d}^{2}  } $$
-                        </p> 
-                    </div>
-                   
-                                
-                                                
-                   
-                </div> 
-            </div> 
-            
-            <p>&nbsp;</p>
-            
             <div class="panel-heading" role="tab" id="headingOne_1">
                 <p class="panel-title">
                     
                         
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Diod Simulation using Newton-Raphson Method
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Simulation using Newton-Raphson method
                     
                 </p>
             </div>
@@ -244,7 +100,7 @@
                                 
                                 <div class="form-group col-md-6"> 
                                     <div class="form-row">
-                                        <!-- <div class="form-group col-md-6"> 
+                                        <div class="form-group col-md-6"> 
                                         
                                             <label for="pet-select">Choose tab size:</label>
 
@@ -258,7 +114,7 @@
                                                 
                                             </select>
                                             
-                                        </div> -->
+                                        </div>
                                         <div class="form-group col-md-6"> 
                                         
                                             <button onclick="cleartab()" class= "btn btn-primary btn-lg" >Clear Tab</button>
@@ -318,176 +174,12 @@
                     </div>
                 </div>
             </div>
-            
-
-
-            <p>
-                &nbsp
-
-            </p>
-
-
-            <div class="panel-heading" role="tab" id="headingOne_1">
-                <p class="panel-title">
-                    
-                        
-                    &nbsp;&nbsp;&nbsp;  Device Simulation using Newton-Raphson Method
-                    
-                </p>
-            </div>
-            
-            <div class="panel-body">
-                <div class="col-md-12">
-                 
-                    <div class="row clearfix">
-                        <div class="col-md-4 align-center ">
-                            <img src="device.png" class="img-responsive thumbnail" style="
-                            margin-left: auto;
-                            margin-right: auto;
-                            display: block;" alt="Trulli" >
-
-                        </div>
-                        
-                        <div class="col-md-8 align-center ">
-                    
-                                    
-                                    <label for="R1"> R1 (Ohm): </label>
-                                    <input type="number" class="form-control" step=".01" id="R1_f" value="1000">
-                                    
-                                    <label for="Vin"> Vdc (V): </label>
-                                    <input type="number" class="form-control" step=".01" id="Vin_f" value="1">
-                            
-                                    
-                            
-                            
-                            
-                            
-                                
-                            <p>
-                                &nbsp
-                
-                            </p>
-                            <div class="form-row">
-                                <div class="form-group col-md-6"> 
-                                    <button onclick="validateForm2()" class= "btn btn-primary btn-lg" >Run</button>
-                                </div>
-                                
-                                <div class="form-group col-md-6"> 
-                                    <div class="form-row">
-                                        
-                                        <div class="form-group col-md-6"> 
-                                        
-                                            <button onclick="cleartab2()" class= "btn btn-primary btn-lg" >Clear Tab</button>
-                                            
-                                        </div>
-                                        
-                                    
-                                    
-                                    </div>    
-                                </div>
-                            </div>        
-                            
-                            
-                        </div>
-                    </div>
-                </div> 
-            </div> 
         
-            <p>
-                &nbsp
-
-            </p>
-            <div class="panel-answer" role="tab" id="">               
-                    
-                <div class="form-row">   
-                    <div class="col-md-12">
-                        <div class="col-md-4">
-                            <h4> Device Voltage  =  <p id= "Vf"> </p>   </h4>
-                        </div>
-                        <div class="col-md-4">
-                            <h4> Device current = <p id= "If">  </p>  </h4>  
-                        </div>
-                        <div class="col-md-4">
-                            <h4> Iterations = <p id= "contador_f">  </p>  </h4>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            
-            <div class="form-row">  
-                <div class="col-md-12">
-                    <div class="panel-body">
-                        <div class="table-responsive" style="height: 100%; width: 100%">
-                            <table class="table table-bordered table-striped table-hover dataTable js-exportable align-center">
-                                <thead>
-                                    <tr>
-                                        <th>Iteration</th>
-                                        <th>Device Voltage (V) </th>
-                                        <th>Device Current (A)</th>
-                                        
-                                    </tr>
-                                </thead>
-                                
-                                <tfoot>
-                                </tfoot>
-                                
-                                <tbody id="tabela_2"> 
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
         
-            <p>
-                &nbsp
-
-            </p>
-            <p>
-                &nbsp
-
-            </p>
+        
         
         </div>
-    
-        
-            
-                
-            
         <!-- panel -->
-        
-      
-            
-        
-            <!-- <div id="tab" class="panel-collapse collapse in"  style="background-color: rgb(255,255,255);" role="tabpanel" aria-labelledby="retorno_aquisicao_collapse_mes">
-                <div class="panel-body">
-                    <div class="table-responsive" style="height: 100%; width: 100%">
-                        <table class="table table-bordered table-striped table-hover dataTable js-exportable align-center">
-                            <thead>
-                                <tr>
-                                    <th>Iteration</th>
-                                    <th>Diode Voltage (V) </th>
-                                    <th>Diode Current (A)</th>
-                                    
-                                </tr>
-                            </thead>
-                            
-                            <tfoot>
-                            </tfoot>
-                            
-                            <tbody id="tabela"> 
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>  -->
-        
-        
-        
-        
-       
         
         
      
@@ -513,14 +205,13 @@
         //     });
         // });
         $(document).ready(function(){
+            $("#temp").change(function(){
+                var T = parseInt(document.getElementById("temp").value);
+                var  Vt = ((T  + 273.15) * (1.380649*Math.pow(10,-23)))/ (1.602176634*Math.pow(10,-19)) 
                 
-                $("#temp").change(function(){
-                    var T = parseInt(document.getElementById("temp").value);
-                    var  Vt = ((T  + 273.15) * (1.380649*Math.pow(10,-23)))/ (1.602176634*Math.pow(10,-19)) 
-                    
-                    document.getElementById("Vt").value = Vt
-                });
+                document.getElementById("Vt").value = Vt
             });
+        });
         
         
         
@@ -544,7 +235,9 @@
             
             var Is =  It*Math.pow(10,pot);
             
-           
+            Vr = [];
+            
+            Ir = [];
             
             Newton(Vd,R1,Vin,eta,Is,Vt);
         }
@@ -573,54 +266,70 @@
         } 
 
         function Newton(Vd,R1,Vin,eta,Is,Vt){
-            Vr = [];
-            Ir = [];
 
             for(var i = 0; i <= 500; i++){
                 var fxn = 0;
                 var Dfxn = 0;
                 var contador
-               
+                
                 if(i == 500){
                     alert("Limite de iterações")
                 }
-                console.log("vd " + Vd)
                 
-                f =  Is*(Math.exp(Vd/(Vt*eta))-1) - Vin/R1 + Vd/R1 ;
-                
-                console.log("f " + f)
-
-                df = (Is/(eta*Vt))*Math.exp(Vd/(Vt*eta)) + 1/R1;
-                
-                console.log("df " + df)
-                
-                Vd = Vd - f/df;
-                
-                Vr[i] = Vd;
-                Ir[i] = Is*(Math.exp(Vd/(Vt*eta)) -1);
-                
-                if(i > 1){
-                    var erro = Vr[ (i - 1) ] - Vr[ (i) ];
+                if(i == 0){
+                    console.log("iteraçao" + i)
                     
-                    erro = Math.abs(erro);
-                    if( erro <= 0.0000001 ){
-                        
-                        break;
+                    fxn =  Id(Vd,R1,Vin,eta,Is,Vt); 
+                    Dfxn = Id2(Vd,R1,Vin,eta,Is,Vt);
+                    Vd = Vd - fxn/Dfxn;
+                    Vr[i] = Vd;
+                    Ir[i] = Is*(Math.exp(Vd/(Vt*eta)));
                     
-                    }
+                    console.log(Vr);
+                    
+                }else if(i == 1){
+                    
+                    // fxn =  Id(Vr[i-1]); 
+                    // Dfxn = Id2(Vr[i-1]);
+                    //console.log("iteraçao" + i)
+                    
+                    fxn =  Id(Vd,R1,Vin,eta,Is,Vt); 
+                    Dfxn = Id2(Vd,R1,Vin,eta,Is,Vt);
 
-                }
+                    Vd = Vd - fxn/Dfxn;
+                    Vr[i] = Vd;
+                    Ir[i] = Is*(Math.exp(Vd/(Vt*eta)));
+                    
+                    console.log(Vr);
+                    
+                } else{
+                    //console.log("iteraçao" + i)
+                    
+                    fxn =  Id(Vd,R1,Vin,eta,Is,Vt); 
+                    Dfxn = Id2(Vd,R1,Vin,eta,Is,Vt);
 
-                
-                if(isNaN(Vr[i])){
+                    Vd = Vd - fxn/Dfxn;
+                    
+                    Ir[i] = Is*(Math.exp(Vd/(Vt*eta)));
+                    Vr[i] = Vd;
+                    if(isNaN(Vr[i])){
                         alert("O critério de Newthon Rhapson divergiu para este setup")
                         break
                     }
+                    var erro1 = Vr[ (i) ]
+                    var erro2 = Vr[ (i - 1) ]
 
+                    var erro = erro2 - erro1;
+                    
+                    erro = Math.abs(erro);
+                    
+                    
                     contador = i;
                     
-                    
-                     
+                    if( erro <= 0.000001 ){
+                        break;
+                    }
+                }      
             
             }
             
@@ -652,10 +361,10 @@
             }
         
             var tamanho_tabela = document.getElementById("tabela").childElementCount;
-            // console.log("tamanho tabela = " + tamanho_tabela)
+            console.log("tamanho tabela = " + tamanho_tabela)
             tabela_retorno_aquisição  = document.getElementById("tabela")
             var diferença = tamanho_tabela - (Vr.length )
-            // console.log("deferença = " + diferença)
+            console.log("deferença = " + diferença)
             if( diferença > 0 ){
                     
                     for(i=0; i < diferença; i++ ){
@@ -672,141 +381,6 @@
                 tabela.removeChild(tabela.firstChild);
             }
 
-        }
-       
-        
-        function validateForm2() {
-            var Vd = 1;
-            var R1 = document.getElementById("R1_f").value;
-            var Vin = document.getElementById("Vin_f").value;
-            
-
-            
-            
-            
-           
-            
-            Newton2(Vd,R1,Vin);
-        }
-        
-        function Newton2(Vd,R1,Vin){
-            Vr = [];
-            Ir = [];
-
-            for(var i = 0; i <= 500; i++){
-                var fxn = 0;
-                var Dfxn = 0;
-                var contador
-               
-                if(i == 500){
-                    alert("Limite de iterações")
-                }
-                console.log("vd " + Vd)
-                
-                f =  1.3*Math.pow(Vd,3) - 0.2*Math.pow(Vd,2) - Vin/R1 + Vd/R1;
-                
-                console.log("f " + f)
-
-                df =  3*1.3*Math.pow(Vd,2) - 0.4*Vd + 1/R1;
-                
-                console.log("df " + df)
-                
-                Vd = Vd - f/df;
-                
-                Vr[i] = Vd;
-                Ir[i] = 1.3*Math.pow(Vd,3) - 0.2*Math.pow(Vd,2);
-                
-                if(i > 1){
-                    var erro = Vr[ (i - 1) ] - Vr[ (i) ];
-                    
-                    erro = Math.abs(erro);
-                    if( erro <= 0.0000001 ){
-                        
-                        break;
-                    
-                    }
-
-                }
-
-                
-                if(isNaN(Vr[i])){
-                        alert("O critério de Newthon Rhapson divergiu para este setup")
-                        break
-                    }
-
-                    contador = i;
-                    
-                    
-                     
-            
-            }
-            
-            var Ic = Is*(Math.exp(Vd/(Vt*eta)))
-            document.getElementById("Vf").innerHTML = Vr[(Vr.length - 1)] + " V";
-            document.getElementById("If").innerHTML = Ir[(Ir.length - 1)] + " A";
-            document.getElementById("contador_f").innerHTML = (Ir.length - 1);
-            
-            tab2(Vr,Ir);
-            
-            
-            
-        }
-        
-        function tab2 ( Vr, Ir ){
-               
-
-               for(var i = 0; i <= Vr.length -1 ; i++) {
-                 $('#tabela_2').append(`
-                     <tr>
-                         <td>${i}</td>
-                         <td>${Vr[i]}</td>
-                         <td> ${Ir[i]} </td>
-                         
-                     </tr>
-                 
-                 `); 
- 
-             }
-         
-             var tamanho_tabela = document.getElementById("tabela_2").childElementCount;
-             // console.log("tamanho tabela = " + tamanho_tabela)
-             tabela_retorno_aquisição  = document.getElementById("tabela_2")
-             var diferença = tamanho_tabela - (Vr.length )
-             // console.log("deferença = " + diferença)
-             if( diferença > 0 ){
-                     
-                     for(i=0; i < diferença; i++ ){
-                         
-                         tabela_2.removeChild(tabela_2.children[0]);
-                     
-                     }
-             }
-         
-         }
-         function cleartab2 (){
-            while(tabela_2.firstChild)  { 
-                tabela_2.removeChild(tabela_2.firstChild);
-            }
-
-        }
-        
-        var mybutton = document.getElementById("myBtn");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
         }
         
     </script>
